@@ -10,15 +10,25 @@ Zabbix Couchbase templateはZabbixのCouchbase監視用テンプレートです�
 **1.Userparameterの設定**
 
 userparamter_couchbase.confを監視対象のサーバの/etc/zabbix/zabbix/zabbix_agentd.d/に配置する
-_※外部コマンドが実行できるようにzabbix_agent.confのEnableRemoteCommandsを1に設定する_
-　
+_※外部コマンドが実行できるようにzabbix_agent.confのEnableRemoteCommandsを1に設定する_  
 
-**2.テンプレートのインポート**
+**2.sudoersの設定**
+
+監視にはcouchbase-cliを使用するので、zabbixユーザがcouchbase-cliを使用できるように設定する  
+
+$ visudo  
+```
+#Defaults    requiretty
+
+zabbix ALL=(root) NOPASSWD: /opt/couchbase/bin/couchbase-cli
+```
+  
+**3.テンプレートのインポート**
 
 Zabbixにzbx_couchbase_templates.xmlをインポートする
 　
 
-**3.マクロを設定する**
+**4.マクロを設定する**
 
 監視対象のホストに以下のマクロを設定する
 
