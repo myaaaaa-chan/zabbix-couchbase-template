@@ -1182,7 +1182,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>100-{Template App Couchbasea:cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},{$BUCKET}].last()}&lt;70</expression>
+            <expression>100-{Template App Couchbasea:cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},{$BUCKET}].last()}&gt;70</expression>
             <name>Lack of free bucket quota warning on server {HOST.NAME}</name>
             <url/>
             <status>0</status>
