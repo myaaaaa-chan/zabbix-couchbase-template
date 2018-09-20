@@ -9,7 +9,7 @@ Zabbix Couchbase templateはZabbixのCouchbase監視用テンプレートです�
 
 **1.Userparameterの設定**
 
-userparamter_couchbase.confを監視対象のサーバの/etc/zabbix/zabbix/zabbix_agentd.d/に配置する
+userparameter_couchbase.confを監視対象のサーバの/etc/zabbix/zabbix/zabbix_agentd.d/に配置する
 _※外部コマンドが実行できるようにzabbix_agent.confのEnableRemoteCommandsを1に設定する_  
 
 **2.sudoersの設定**
